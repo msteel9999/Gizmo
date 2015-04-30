@@ -1,0 +1,21 @@
+<template name="carouselSlides">
+    <div class="carousel-inner" role="listbox">
+        {{#each addIndex productItems}}
+            {{> carouselSlide}}
+        {{/each}}
+    </div>
+</template>
+
+<template name="carouselSlide">
+    <div class="item {{#if isFirst index}}active{{/if}}">
+        <a href="{{value.productLink}}">
+            <img src="{{value.productImageSource}}"/>
+        </a>
+
+        <div class="carousel-caption">
+            <h3><span>{{value.productName}}</span></h3>
+            <p><span>{{value.productDetail}}</span></p>
+            <a class="btn btn-outline btn-xlg" href="{{value.productLink}}">Get one</a>
+        </div>
+    </div>
+</template>

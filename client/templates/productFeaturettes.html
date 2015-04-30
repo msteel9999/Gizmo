@@ -13,32 +13,35 @@
 
 
 <template name="evenFeaturette">
-    <div class="row featurette">
+    <div class="row featurette featuretteEven">
         <div class="col-md-7">
-            <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            {{>featuretteText}}
         </div>
         <div class="col-md-5">
-            <a href="{{value.productLink}}">
-                <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="{{value.productName}}"
-                     src="{{value.productImageSource}}" data-holder-rendered="true">
-            </a>
+            {{>featuretteImage}}
         </div>
     </div>
 </template>
 
 <template name="oddFeaturette">
-    <div class="row featurette">
+    <div class="row featurette featuretteOdd">
         <div class="col-md-7 col-md-push-5">
-            <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            {{>featuretteText}}
         </div>
         <div class="col-md-5 col-md-pull-7">
-            <a href="{{value.productLink}}">
-                <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="{{value.productName}}"
-                     src="{{value.productImageSource}}" data-holder-rendered="true">
-           </a>
+            {{>featuretteImage}}
         </div>
     </div>
 </template>
 
+<template name="featuretteText">
+    <h2 class="featurette-heading">{{value.productName}}. <span class="text-muted">{{value.productDetail}}.</span></h2>
+    <p class="lead">{{value.productDescription}}</p>
+</template>
+
+<template name="featuretteImage">
+    <a href="{{value.productLink}}">
+        <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="{{value.productName}}"
+             src="{{value.productImageSource}}" data-holder-rendered="true">
+    </a>
+</template>
